@@ -1,15 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 
-function App() {
+function App(props:any) {
+
+    let[ratingValue, setRatingValue] = useState<RatingValueType>(0)
+
     return (
         <div className="App">
-            {/*<OnOff/>*/}
-            <UncontrolledAccordion titleValue={'Menu'}/>
-            <UncontrolledRating/>
+
+            <Rating value={ratingValue} onClick={setRatingValue}/>
         </div>
     );
 }
