@@ -3,6 +3,7 @@ import './App.css';
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {Accordion} from "./components/Accordion/Accordion";
+import {OnOff} from "./components/onOff/onOff";
 
 function App(props:any) {
 
@@ -16,6 +17,7 @@ function App(props:any) {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
             <Accordion titleValue={"Menu"} collapsed={accordionCollapsed}/>
+            <OnOff/>
         </div>
     );
 }
