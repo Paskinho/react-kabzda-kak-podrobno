@@ -5,6 +5,7 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import {Accordion} from "./components/Accordion/Accordion";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
 function App(props:any) {
 
@@ -20,6 +21,7 @@ function App(props:any) {
             <UncontrolledRating/>
             <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>
             <OnOff on={onOffChange} onChange={setOnOffChanged}/>
+            <UncontrolledAccordion titleValue={"blalala"}/>
         </div>
     );
 }
