@@ -4,6 +4,8 @@ type AccordionPropsType = {
     titleValue:string
     collapsed: boolean
     onChange: ()=> void
+    items: string[]
+
 }
 
 export function Accordion (props: AccordionPropsType) {
@@ -12,7 +14,7 @@ export function Accordion (props: AccordionPropsType) {
         <AccordionTitle title={props.titleValue}
         onChange={props.onChange}
         />
-        {!props.collapsed && <AccordionBody/>}
+        {!props.collapsed && <AccordionBody items={items}/>}
     </div>
 
 }
