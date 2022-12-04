@@ -6,6 +6,7 @@ import {Accordion} from "./components/Accordion/Accordion";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {Select} from "./components/Select/Select";
 
 function App(props:any) {
 
@@ -19,9 +20,10 @@ function App(props:any) {
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
-            <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>
+            <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}} items={[]} onClick={()=>{}}/>
             <OnOff on={onOffChange} onChange={setOnOffChanged}/>
             <UncontrolledAccordion titleValue={"blalala"}/>
+            {/*<Select value={"Hello"} onClick={()=>{alert("Hello")}} items={[{title: "sadf", value: 1}]}/>*/}
         </div>
     );
 }
