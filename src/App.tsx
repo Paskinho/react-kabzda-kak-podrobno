@@ -22,7 +22,7 @@ function App(props:any) {
             <UncontrolledRating/>
             <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}} items={[]} onClick={()=>{}}/>
             <OnOff on={onOffChange} onChange={setOnOffChanged}/>
-            <UncontrolledAccordion titleValue={"blalala"}/>
+            <UncontrolledAccordion titleValue={"Users"}/>
             {/*<Select value={"Hello"} onClick={()=>{alert("Hello")}} items={[{title: "sadf", value: 1}]}/>*/}
         </div>
     );
