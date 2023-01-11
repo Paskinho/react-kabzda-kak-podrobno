@@ -53,7 +53,7 @@ export const HelpsToReactMemo = () => {
     const newArray = useMemo(()=> {
         const newArray = users.filter(u=> u.toLowerCase().indexOf('a') > -1)
 return newArray
-    },[])
+    },[users])
 
     const addUser = ()=> {
         const newUsers = [...users,'Sveta' + new Date().getTime()];
