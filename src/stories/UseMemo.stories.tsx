@@ -71,7 +71,7 @@ return newArray
 export const LikeUseCallback = () => {
     console.log("likeUseCallback")
     const [counter, setCounter] = useState(0)
-    const [books, setBooks] = useState (["React", "HTML", "JS", "CSSS"])
+    const [books, setBooks] = useState (["React", "HTML", "JS", "CSS"])
 
     const newArray = useMemo(()=> {
         const newArray = books.filter(u=> u.toLowerCase().indexOf('a') > -1)
@@ -85,13 +85,21 @@ export const LikeUseCallback = () => {
 
     return <>
         <button onClick={() => setCounter(counter + 1)}> + </button>
-        <button onClick={() => addBook()}> add user </button>
-        <Books books={newArray}/>
+
+        <Books books={newArray} addBook={addBook}/>
     </>
 }
 
-const BooksSecret = (props: {books: Array<string>}) =>  {
-    return <div> {props.books.map((u,i)=> <div key={i}>{u}</div>)}
+type BookSecretPropsType = {
+    books: Array<string>;
+    addBook: ()=> void
+}
+
+const BooksSecret = (props: BookSecretPropsType) =>  {
+
+    return <div>
+        <button onClick={() => props.addBook()}> add book </button>
+        {props.books.map((u,i)=> <div key={i}>{u}</div>)}
     </div>
 }
 
