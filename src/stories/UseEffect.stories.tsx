@@ -38,3 +38,32 @@ useEffect(()=> {
 
 
 }
+
+export const SetTimeoutExample = () => {
+    const [fake,setFake] = useState(1)
+    const [counter,setCounter] = useState(1)
+
+
+    console.log("SetTimeoutExample");
+
+    useEffect(()=> {
+        setTimeout (()=> {
+            console.log('SetTimeout')
+            document.title = counter.toString();
+        }, 1000)
+    }, [counter])
+
+
+
+    return <>
+        Hello,{counter} {fake}
+        <button onClick={() => {
+            setFake(fake+1)}
+        }>fake+</button>
+        <button onClick={() => {
+            setCounter(counter+1)}
+        }>counter+</button>
+    </>
+
+
+}
