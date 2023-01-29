@@ -8,7 +8,7 @@ export default  {
 }
 
 
-export const ClocksShow = () => {
+export const BaseExample = () => {
     return <Clock/>
 
 }
