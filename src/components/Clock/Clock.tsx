@@ -3,32 +3,30 @@ import React, {useEffect, useState} from "react"
 type PropsType = {
 
 }
+const getTwoDigitsString = (num: number) => num < 10 ? "0" + num : num
 
 export const Clock: React.FC<PropsType> = (props) => {
 
     const [date, setDate] = useState(new Date())
     useEffect(()=> {
-        setInterval(()=> {
+       const intervalId = setInterval(()=> {
             setDate(new Date())
-        },1000)
+        },1000);
+        return () => {
+            clearInterval(intervalId)
+        }
+
     },[])
-
-    const getTwoDigitsString = (num: number) => num < 10 ? "0" + num : num
-
-    const hoursString = getTwoDigitsString(date.getHours())
-    const minutesString = getTwoDigitsString(date.getMinutes())
-    const secondsString = getTwoDigitsString(date.getSeconds())
-
 
 
 
 
     return <div>
-        <span>{hoursString}</span>
+        <span>{getTwoDigitsString(date.getHours())}</span>
         :
-        <span>{minutesString}</span>
+        <span>{getTwoDigitsString(date.getMinutes())}</span>
         :
-        <span>{secondsString}</span>
+        <span>{getTwoDigitsString(date.getSeconds())}</span>
 
     </div>
 }
