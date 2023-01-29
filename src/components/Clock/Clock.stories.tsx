@@ -1,5 +1,15 @@
+import  {useState} from "react";
+import {Clock} from "./Clock";
+import {action} from "@storybook/addon-actions";
 
-
-const Clock: React.FC<PropsType> = (props) => {
-    return <div></div>
+export default  {
+    title: "Clock",
+    component: Clock
 }
+
+
+export const ClocksShow = () => {
+    return <Clock/>
+
+}
+
