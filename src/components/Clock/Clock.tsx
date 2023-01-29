@@ -13,13 +13,22 @@ export const Clock: React.FC<PropsType> = (props) => {
         },1000)
     },[])
 
+    const getTwoDigitsString = (num: number) => num < 10 ? "0" + num : num
+
+    const hoursString = getTwoDigitsString(date.getHours())
+    const minutesString = getTwoDigitsString(date.getMinutes())
+    const secondsString = getTwoDigitsString(date.getSeconds())
+
+
+
+
 
     return <div>
-        <span>{date.getHours()}</span>
+        <span>{hoursString}</span>
         :
-        <span>{date.getMinutes()}</span>
+        <span>{minutesString}</span>
         :
-        <span>{date.getSeconds()}</span>
+        <span>{secondsString}</span>
 
     </div>
 }
