@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 
 type PropsType = {
-
+mode?: 'analog' | "digital"
 }
 const getTwoDigitsString = (num: number) => num < 10 ? "0" + num : num
 
@@ -18,15 +18,24 @@ export const Clock: React.FC<PropsType> = (props) => {
 
     },[])
 
+ let view;
 
 
+    switch (props.mode) {
+    case 'analog' :
+    view = <span>ANALOG</span>
+    break;
+    case 'digital' :
+        default:
+            view = <> <span>{getTwoDigitsString(date.getHours())}</span>
+        :
+            <span>{getTwoDigitsString(date.getMinutes())}</span>
+        :
+            <span>{getTwoDigitsString(date.getSeconds())}</span>
+                </>
+    }
 
     return <div>
-        <span>{getTwoDigitsString(date.getHours())}</span>
-        :
-        <span>{getTwoDigitsString(date.getMinutes())}</span>
-        :
-        <span>{getTwoDigitsString(date.getSeconds())}</span>
-
+        {view}
     </div>
 }
