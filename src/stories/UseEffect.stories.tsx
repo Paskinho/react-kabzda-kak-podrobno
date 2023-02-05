@@ -72,14 +72,20 @@ export const ResetEffectExample = () => {
     const [counter,setCounter] = useState(1)
 
 
-    console.log("Component rendered");
+    console.log("Component rendered" + counter);
 
     useEffect(()=> {
-       console.log("Effect occured")
-    }, [])
+       console.log("Effect occured:" + counter)
+        return ()=>{
+            console.log("RESET EFFECT" + counter)
+        }
+
+    }, [counter])
+
+    const increaseHandler = ()=> {setCounter(counter + 1)}
 
     return <>
-    Hello, counter: {counter} <button onClick={()=> {setCounter(counter + 1)}}>+</button>
+    Hello, counter: {counter} <button onClick={increaseHandler}>+</button>
     </>
 }
 
